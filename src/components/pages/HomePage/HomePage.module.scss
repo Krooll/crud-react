@@ -1,0 +1,12 @@
+.home {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
