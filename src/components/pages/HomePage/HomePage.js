@@ -1,11 +1,17 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './HomePage.module.scss';
-import { getAllPost } from '../../../redux/postRedux';
+import { fetchPosts, getAllPost } from '../../../redux/postRedux';
 import { Button, Container } from 'react-bootstrap';
 import PostCard from '../../features/PostCard/PostCard';
+import { useEffect } from 'react';
 
 const HomePage = () => {
+    const dispatch = useDispatch();
     const posts = useSelector(getAllPost);
+
+    useEffect(() => {
+        dispatch(fetchPosts());
+    }, [dispatch]);
     
     return(
         <Container>
