@@ -1,4 +1,5 @@
 import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import styles from './PostCard.module.scss';
 
 const PostCard = props => {
@@ -10,7 +11,7 @@ const PostCard = props => {
                     <Card.Text className={styles.author}>Author: <span className={styles.text}>{props.author}</span></Card.Text>
                     <Card.Text className={styles.data}>Published: <span className={styles.text}>{props.publishedDate}</span></Card.Text>
                     <Card.Text>description</Card.Text>
-                    <Button>Read more</Button>
+                    <Link to={'/post/' + props.id}><Button>Read more</Button></Link>
                 </Card.Body>
             </Card>
         </Col>

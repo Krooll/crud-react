@@ -4,7 +4,7 @@ import postsReducer from './postRedux';
 import thunk from 'redux-thunk';
 
 const subreducers = {
-  posts: postsReducer
+  posts: postsReducer,
 }
 
 const reducer = combineReducers(subreducers);
