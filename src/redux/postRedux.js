@@ -1,3 +1,5 @@
+import shortid from "shortid";
+
 //config
 export const API_URL = process.env.NODE_ENV === 'production' ?  '/api' : 'http://localhost:3131/api'
 
@@ -32,13 +34,13 @@ export const fetchPosts = () => {
 export const removePostRequest = (postId) => {
   return (dispatch) => {
     const options = {
-      method: 'PUT',
+      method: 'DELETE',
       headers: {
       'Content-Type': 'application/json'
       },
       body: JSON.stringify(postId)
     } 
-    fetch(API_URL + '/posts', options)
+    fetch(API_URL + '/posts/' + postId.id , options)
             .then(() => dispatch(removePost(postId)))
   }
 };
@@ -46,13 +48,13 @@ export const removePostRequest = (postId) => {
 export const addPostRequest = (postData) => {
   return (dispatch) => {
     const options = {
-      method: 'PUT',
+      method: 'POST',
       headers: {
       'Content-Type': 'application/json'
       },
       body: JSON.stringify(postData)
     } 
-    fetch(API_URL + '/posts', options)
+    fetch(API_URL + '/posts/', options)
             .then(() => dispatch(addPost(postData)))
   }
 };
@@ -64,7 +66,7 @@ const postsReducer = (statePart = [], action) => {
     case REMOVE_POST: 
       return statePart.filter(item => item.id !== action.payload);
     case ADD_POST: 
-      return [...statePart, {...action.payload, }]
+      return [...statePart, {...action.payload, id: shortid()}]
     default:
       return statePart;
   };
