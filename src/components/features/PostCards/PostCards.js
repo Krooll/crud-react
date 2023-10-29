@@ -1,6 +1,6 @@
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import styles from './PostCard.module.scss';
+import styles from './PostCards.module.scss';
 
 const PostCard = props => {
     return(

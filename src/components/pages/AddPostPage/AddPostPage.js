@@ -5,6 +5,7 @@ const AddPostPage = () => {
         <div>
             <h1>AddPostPage</h1>
             <p>Work in progress</p>
+            <button>dodaj</button>
         </div>
     );
 };
