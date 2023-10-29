@@ -13,6 +13,7 @@ const SinglePostPage = () => {
     const [show, setShow] = useState(false);
     const handleShowWarning = () => setShow(true);
     const handleCloseWarning = () => setShow(false);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleRemovePost = e => {
@@ -35,7 +36,7 @@ const SinglePostPage = () => {
                             </div>
                         </div>
                         <Card.Text className={styles.author}>Author: <span className={styles.text}>{postData.author}</span></Card.Text>
-                        <Card.Text className={styles.data}>Published: <span className={styles.text}>{postData.publishedDate}</span></Card.Text>
+                        <Card.Text className={styles.date}>Published: <span className={styles.text}>{postData.publishedDate}</span></Card.Text>
                         <Card.Text>{postData.content}</Card.Text>
                     </Card.Body>
                 </Row>

@@ -1,10 +1,13 @@
-import styles from './NotFound.module.scss';
+import { Link } from 'react-router-dom';
+import styles from './NotFoundPage.module.scss';
+import { Button } from 'react-bootstrap';
 
 const NotFoundPage = () => {
     return(
-        <div>
-            <h1>NoutfoundPage</h1>
-            <p>Work in progress</p>
+        <div className={styles.main}>
+            <h1>Page not found</h1>
+            <h3>Error</h3>
+            <Link to={'/'}><Button className={styles.button}>Back to home page</Button></Link>
         </div>
     );
 };

@@ -14,6 +14,14 @@ const HomePage = () => {
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);
+
+    if(!posts){
+        return(
+            <Container>
+                <h5>Loding list...</h5>
+            </Container>
+        );
+    }
     
     return(
         <Container>

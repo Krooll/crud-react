@@ -66,7 +66,7 @@ const postsReducer = (statePart = [], action) => {
     case REMOVE_POST: 
       return statePart.filter(item => item.id !== action.payload);
     case ADD_POST: 
-      return [...statePart, {...action.payload, id: shortid()}]
+      return [...statePart, {id: shortid(), ...action.payload}]
     default:
       return statePart;
   };

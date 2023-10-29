@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/post/add" element={<AddPostPage />} />
           <Route path="/post/edit/:id" element={<EditPostPage />} />
           <Route path="/post/:id" element={<SinglePostPage />} />
-          <Route path="/post/about" element={<AboutPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         <Footer />

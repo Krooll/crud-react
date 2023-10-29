@@ -10,7 +10,7 @@ const PostCard = props => {
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text className={styles.author}>Author: <span className={styles.text}>{props.author}</span></Card.Text>
                     <Card.Text className={styles.data}>Published: <span className={styles.text}>{props.publishedDate}</span></Card.Text>
-                    <Card.Text>description</Card.Text>
+                    <Card.Text>{props.shortDescription}</Card.Text>
                     <Link to={'/post/' + props.id}><Button>Read more</Button></Link>
                 </Card.Body>
             </Card>

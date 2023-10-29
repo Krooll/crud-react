@@ -25,10 +25,12 @@
       "author": "John Doe"
     },
     {
-      "id": "oQfK9tV"
-    },
-    {
-      "id": "UfBb_ap"
+      "title": "Czy aplikacja na ten moment dziala? ",
+      "author": "Paweł Król",
+      "publishedDate": "29.10",
+      "shortDescription": "Czy aplikacja sciaga short description? ",
+      "content": "Czy aplikacja sciaga description? ",
+      "id": "LRMxBuN"
     }
   ]
 }
