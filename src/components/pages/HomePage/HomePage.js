@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
     const dispatch = useDispatch();
     const posts = useSelector(getAllPost);
-    console.log('posts', posts);
 
     useEffect(() => {
         dispatch(fetchPosts());

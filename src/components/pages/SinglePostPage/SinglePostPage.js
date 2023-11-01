@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const SinglePostPage = () => {
     const {id} = useParams();
@@ -31,7 +32,7 @@ const SinglePostPage = () => {
                         <div className={styles.titleSection}>
                             <Card.Title>{postData.title}</Card.Title>
                             <div>
-                                <Button variant="outline-primary" className={styles.button}>Edit</Button>
+                                <Button as={NavLink} to={'/post/edit/'+ postData.id} variant="outline-primary" className={styles.button}>Edit</Button>
                                 <Button variant="outline-danger" className={styles.button} onClick={handleShowWarning}>Delete</Button>
                             </div>
                         </div>

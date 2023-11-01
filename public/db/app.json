@@ -10,8 +10,8 @@
     },
     {
       "id": "4",
-      "title": "Article title4",
-      "shortDescription": "Short description of the article4...",
+      "title": "Kolejny test aplikacji ",
+      "shortDescription": "Szybki test aplikacji ",
       "content": "Main content of the article",
       "publishedDate": "02-05-2020",
       "author": "John Doe"
@@ -19,18 +19,10 @@
     {
       "id": "5",
       "title": "Article title5",
-      "shortDescription": "Short description of the article5...",
+      "shortDescription": "",
       "content": "Main content of the article",
       "publishedDate": "02-05-2020",
-      "author": "John Doe"
-    },
-    {
-      "title": "Czy aplikacja na ten moment dziala? ",
-      "author": "Paweł Król",
-      "publishedDate": "29.10",
-      "shortDescription": "Czy aplikacja sciaga short description? ",
-      "content": "Czy aplikacja sciaga description? ",
-      "id": "LRMxBuN"
+      "author": "test 2 "
     }
   ]
 }
