@@ -3,21 +3,26 @@ import styles from './HomePage.module.scss';
 import { fetchPosts, getAllPost } from '../../../redux/postRedux';
 import { Button, Container } from 'react-bootstrap';
 import PostCards from '../../features/PostCards/PostCards';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
+    const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
     const posts = useSelector(getAllPost);
+    console.log('loading', loading);
 
     useEffect(() => {
         dispatch(fetchPosts());
+        setLoading(false);
     }, [dispatch]);
 
-    if(!posts){
+    if(loading){
         return(
             <Container>
-                <h5>Loding list...</h5>
+                <div className={styles.loading}>
+                    <h5>Loding list...</h5>
+                </div>
             </Container>
         );
     }

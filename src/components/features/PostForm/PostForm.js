@@ -1,30 +1,41 @@
 import styles from './PostForm.module.scss';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container, Col, Form, Button } from 'react-bootstrap';
-import shortid from 'shortid';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
+import { fetchCategories, getAllCategories } from '../../../redux/categoriesRedux';
+import { useEffect } from 'react';
 
 const PostForm = ({ action, actionText, actionTitle, ...props }) => {
     const [title, setTitle] = useState(props.title || '');
     const [author, setAuthor] = useState(props.author || '');
     const [publishedDate, setPublishedDate] = useState(props.publishedDate || new Date());
+    const [category, setCategory] = useState(props.category || '');
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
     const [dateError, setDateError] = useState(false);
     const [contentError, setContentError] = useState(false);
+    const [categoryError, setCategoryError] = useState(false);
+
+    const dispatch = useDispatch();
+    const categories = useSelector(getAllCategories);
+    useEffect(() => {
+        dispatch(fetchCategories());
+    }, [dispatch]);
+    console.log('categories', categories);
 
 
     const { register, handleSubmit: validate, formState: { errors } } = useForm();
     const handlePost = () => {
         setDateError(!publishedDate);
         setContentError(!content);
+        setCategoryError(!category);
         if(content && publishedDate) {
-            action({ title, author, publishedDate, shortDescription, content});
+            action({ title, author, publishedDate, shortDescription, content, category});
         }
     };
 
@@ -52,10 +63,21 @@ const PostForm = ({ action, actionText, actionTitle, ...props }) => {
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <Form.Label>Published</Form.Label>
-                        <DatePicker selected={publishedDate} onChange={(date) => setPublishedDate(date)}/>
+                        <DatePicker selected={new Date(publishedDate)} onChange={(date) => setPublishedDate(date)}/>
                         {dateError && <small className="d-block form-text text-danger mt-2">
                         Content can't be empty</small>}
                     </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Category</Form.Label>
+                        <Form.Select aria-label='select category' 
+                        {...register("category", {required: true})}
+                        value={category} 
+                        onChange={e => setCategory(e.target.value)}>
+                        <option>Select category...</option> 
+                        {categories.map((category, index) => <option key={index} >{category}</option>)} 
+                        </Form.Select>
+                    </Form.Group>
+                    {categoryError && <small className="d-block form-text text-danger mt-2">Select category</small>}
                 </Col>
                 <Form.Group className="mb-3">
                     <Form.Label>Short decription</Form.Label>

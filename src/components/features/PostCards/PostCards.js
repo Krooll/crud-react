@@ -13,6 +13,7 @@ const PostCard = props => {
                     <Card.Text className={styles.data}>Published: <span className={styles.text}>
                         {dateFormat(new Date(props.publishedDate))}</span>
                     </Card.Text>
+                    <Card.Text className={styles.category}>Category: <span className={styles.text}>{props.category}</span></Card.Text>
                     <Card.Text>{props.shortDescription}</Card.Text>
                     <Link to={'/post/' + props.id}><Button>Read more</Button></Link>
                 </Card.Body>

@@ -6,6 +6,7 @@
       "shortDescription": "Short description of the article1...",
       "content": "Main content of the article",
       "publishedDate": "02-05-2020",
+      "category": "Sport",
       "author": "John Doe"
     },
     {
@@ -14,15 +15,22 @@
       "shortDescription": "Short description",
       "content": "<p>Main content of the article</p>",
       "publishedDate": "02-05-2020",
+      "category": "Sport",
       "author": "test 2 "
     },
     {
       "title": "Aplikacja działa ",
       "author": "Paweł Król ",
       "publishedDate": "2023-11-16T13:44:10.000Z",
+      "category": "Movies",
       "shortDescription": "Udało się pozbyć błędu: action must be plain object. ",
       "content": "<p>Aplikacja działa poprawnie. </p>",
       "id": "Fll_h66"
     }
+  ],
+  "categories": [
+    "Sport",
+    "News",
+    "Movies"
   ]
 }

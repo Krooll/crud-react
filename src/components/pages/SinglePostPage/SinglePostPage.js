@@ -41,6 +41,7 @@ const SinglePostPage = () => {
                         <Card.Text className={styles.date}>Published: 
                             <span className={styles.text}>{dateFormat(new Date(postData.publishedDate))}</span>
                         </Card.Text>
+                        <Card.Text className={styles.category}>Category: <span className={styles.text}>{postData.category}</span></Card.Text>
                         <Card.Text><p dangerouslySetInnerHTML={{ __html: postData.content }} /></Card.Text>
                     </Card.Body>
                 </Row>
