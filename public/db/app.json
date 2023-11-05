@@ -9,20 +9,20 @@
       "author": "John Doe"
     },
     {
-      "id": "4",
-      "title": "Kolejny test aplikacji ",
-      "shortDescription": "Szybki test aplikacji ",
-      "content": "Main content of the article",
-      "publishedDate": "02-05-2020",
-      "author": "John Doe"
-    },
-    {
       "id": "5",
       "title": "Article title5",
-      "shortDescription": "",
-      "content": "Main content of the article",
+      "shortDescription": "Short description",
+      "content": "<p>Main content of the article</p>",
       "publishedDate": "02-05-2020",
       "author": "test 2 "
+    },
+    {
+      "title": "Aplikacja działa ",
+      "author": "Paweł Król ",
+      "publishedDate": "2023-11-16T13:44:10.000Z",
+      "shortDescription": "Udało się pozbyć błędu: action must be plain object. ",
+      "content": "<p>Aplikacja działa poprawnie. </p>",
+      "id": "Fll_h66"
     }
   ]
 }

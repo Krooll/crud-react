@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import dateFormat from '../../../utils/dateToStr';
 
 const SinglePostPage = () => {
     const {id} = useParams();
@@ -37,8 +38,10 @@ const SinglePostPage = () => {
                             </div>
                         </div>
                         <Card.Text className={styles.author}>Author: <span className={styles.text}>{postData.author}</span></Card.Text>
-                        <Card.Text className={styles.date}>Published: <span className={styles.text}>{postData.publishedDate}</span></Card.Text>
-                        <Card.Text>{postData.content}</Card.Text>
+                        <Card.Text className={styles.date}>Published: 
+                            <span className={styles.text}>{dateFormat(new Date(postData.publishedDate))}</span>
+                        </Card.Text>
+                        <Card.Text><p dangerouslySetInnerHTML={{ __html: postData.content }} /></Card.Text>
                     </Card.Body>
                 </Row>
                 <Modal show={show} onHide={handleCloseWarning}>

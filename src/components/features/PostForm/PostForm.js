@@ -3,67 +3,73 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Container, Col, Form, Button } from 'react-bootstrap';
 import shortid from 'shortid';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useForm } from "react-hook-form";
 
 const PostForm = ({ action, actionText, actionTitle, ...props }) => {
     const [title, setTitle] = useState(props.title || '');
     const [author, setAuthor] = useState(props.author || '');
-    const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
+    const [publishedDate, setPublishedDate] = useState(props.publishedDate || new Date());
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
+    const [dateError, setDateError] = useState(false);
+    const [contentError, setContentError] = useState(false);
 
-    const handleSetTitle = (e) =>{
-        const activeTitle = e.target.value;
-        setTitle(activeTitle);
-    };
-    const handleSetAuthor = (e) =>{
-        const activeAuthor = e.target.value;
-        setAuthor(activeAuthor);
-    };
-    const handleSetDate = (e) => {
-        const activeDate = e.target.value;
-        setPublishedDate(activeDate);
-    };
-    const handleSetShortDescription = (e) => {
-        const activeShortDescription = e.target.value;
-        setShortDescription(activeShortDescription);
-    };
-    const handleSetDescription = (e) => {
-        const activeDescription = e.target.value;
-        setContent(activeDescription);
-    };
 
-    const dispatch = useDispatch();
-    const handlePost = e => {
-        e.preventDefault();
-        dispatch(action({id: shortid(), title, author, publishedDate, shortDescription, content}));
+    const { register, handleSubmit: validate, formState: { errors } } = useForm();
+    const handlePost = () => {
+        setDateError(!publishedDate);
+        setContentError(!content);
+        if(content && publishedDate) {
+            action({ title, author, publishedDate, shortDescription, content});
+        }
     };
 
     return(
      <Container className={styles.container}>
         <Col xs={10} md={8} lg={8} className={styles.form}>
             <h1 className={styles.title}>{actionTitle}</h1>
-            <Form onSubmit={handlePost}>
+            <Form onSubmit={validate(handlePost)}>
                 <Col xs={10} md={8} lg={6}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group className="mb-3">
                         <Form.Label>Title</Form.Label>
-                        <Form.Control type="text" placeholder="Title..." value={title} onChange={handleSetTitle}/>
+                        <Form.Control {...register("title", { required: true, minLength: 3, maxLength: 26 })}
+                        type="text" placeholder="Title..." value={title} 
+                        onChange={(e) => setTitle(e.target.value)}/>
+                        {errors.title && <small className="d-block form-text text-danger mt-2">
+                        Title must be at least 3 and up to 26 characters long</small>}
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group className="mb-3">
                         <Form.Label>Author</Form.Label>
-                        <Form.Control type="text" placeholder="Author name..." value={author} onChange={handleSetAuthor}/>
+                        <Form.Control {...register("author", { required: true, minLength: 3, maxLength: 26 })}
+                        type="text" placeholder="Author name..." value={author} 
+                        onChange={(e) => setAuthor(e.target.value)}/>
+                        {errors.author && <small className="d-block form-text text-danger mt-2">
+                        Author must be at least 3 and up to 26 characters long</small>}
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group className="mb-3">
                         <Form.Label>Published</Form.Label>
-                        <Form.Control type="text" placeholder="Date..." value={publishedDate} onChange={handleSetDate}/>
+                        <DatePicker selected={publishedDate} onChange={(date) => setPublishedDate(date)}/>
+                        {dateError && <small className="d-block form-text text-danger mt-2">
+                        Content can't be empty</small>}
                     </Form.Group>
                 </Col>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="mb-3">
                     <Form.Label>Short decription</Form.Label>
-                    <Form.Control as="textarea" rows={3} value={shortDescription} onChange={handleSetShortDescription}/>
+                    <Form.Control  {...register("description", { required: true, minLength: 30 })}
+                    as="textarea" rows={3} value={shortDescription} 
+                    placeholder="Leave a short description here..." onChange={(e) => setShortDescription(e.target.value)}/>
+                    {errors.description && <small className="d-block form-text text-danger mt-2">
+                    Short description must be at least 30 characters long</small>}
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="mb-3">
                     <Form.Label>Decription</Form.Label>
-                    <Form.Control as="textarea" rows={6} value={content} onChange={handleSetDescription}/>
+                    <ReactQuill as="textarea" placeholder="Leave a comment here..." rows={5}
+                    value={content} onChange={(value) => setContent(value)} />
+                    {contentError && <small className="d-block form-text text-danger mt-2">Content can't be empty</small>}
                 </Form.Group>
                 <div className={styles.buttonSection}>
                     <Button type="submit">{actionText}</Button>
