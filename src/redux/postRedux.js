@@ -4,6 +4,7 @@ export const API_URL = process.env.NODE_ENV === 'production' ?  '/api' : 'http:/
 //selectors
 export const getAllPost = (state) => state.posts;
 export const getPostById = ({posts}, id) => posts.find(post => post.id === id);
+export const getPostsByCategory = ({posts}, category) => posts.filter(post => post.category === category);
 
 // actions
 const createActionName = actionName => `app/posts/${actionName}`;

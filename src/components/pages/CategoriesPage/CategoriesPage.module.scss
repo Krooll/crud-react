@@ -1,0 +1,29 @@
+.container {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list {
+    margin: 50px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    margin: 5px;
+}
+
+.button:hover{
+    color: white;
+    .buttonText {
+        color: white;
+    }
+}
+
+.buttonText {
+    margin: 0;
+}

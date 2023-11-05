@@ -12,7 +12,7 @@
     {
       "id": "5",
       "title": "Article title5",
-      "shortDescription": "Short description",
+      "shortDescription": "Short description must be at least 30 characters long",
       "content": "<p>Main content of the article</p>",
       "publishedDate": "02-05-2020",
       "category": "Sport",
@@ -24,7 +24,7 @@
       "publishedDate": "2023-11-16T13:44:10.000Z",
       "category": "Movies",
       "shortDescription": "Udało się pozbyć błędu: action must be plain object. ",
-      "content": "<p>Aplikacja działa poprawnie. </p>",
+      "content": "<p>Aplikacja działa poprawnie. Działa już prawie wszystko oprocz tekstu brak listy postow z tej kategorii</p>",
       "id": "Fll_h66"
     }
   ],

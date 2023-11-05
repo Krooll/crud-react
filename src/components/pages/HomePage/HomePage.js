@@ -10,7 +10,6 @@ const HomePage = () => {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
     const posts = useSelector(getAllPost);
-    console.log('loading', loading);
 
     useEffect(() => {
         dispatch(fetchPosts());
@@ -19,11 +18,9 @@ const HomePage = () => {
 
     if(loading){
         return(
-            <Container>
-                <div className={styles.loading}>
-                    <h5>Loding list...</h5>
-                </div>
-            </Container>
+            <div className={styles.loading}>
+                <h5>Loding list...</h5>
+            </div>
         );
     }
     
