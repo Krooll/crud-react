@@ -9,8 +9,8 @@ const PostByCategoriesPage = () => {
     const {category} = useParams();
     const categoryFilter = useSelector(state => getPostsByCategory(state, category));
 
-    if(!categoryFilter) {
-        console.log('emptylist');
+    if(!categoryFilter.length) {
+        return <div className={styles.info}>Nothing here...</div>
     }
     return (
         <Col xs={12} md={12} lg={12} className={styles.list}>
