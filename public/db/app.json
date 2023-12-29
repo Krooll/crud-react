@@ -16,7 +16,7 @@
       "content": "<p>Main content of the article</p>",
       "publishedDate": "02-05-2020",
       "category": "Sport",
-      "author": "test 2 "
+      "author": "test 3"
     },
     {
       "title": "Aplikacja działa ",
@@ -26,6 +26,15 @@
       "shortDescription": "Udało się pozbyć błędu: action must be plain object. ",
       "content": "<p>Aplikacja działa poprawnie. Działa już prawie wszystko oprocz tekstu brak listy postow z tej kategorii</p>",
       "id": "Fll_h66"
+    },
+    {
+      "title": "Test aplikacji",
+      "author": "Natalia Kubiak",
+      "publishedDate": "2023-11-25T13:04:51.418Z",
+      "shortDescription": "Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji ",
+      "content": "<p>Test aplikcji, <strong>Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji</strong>, Test aplikcji, Test aplikcji&nbsp;</p>",
+      "category": "Movies",
+      "id": "21jZ4R0"
     }
   ],
   "categories": [
