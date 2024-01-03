@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Article title1",
+      "shortDescription": "Short description of the article1...",
+      "content": "Main content of the article",
+      "publishedDate": "02-05-2020",
+      "category": "Sport",
+      "author": "John Doe"
+    },
+    {
+      "id": "5",
+      "title": "Article title5",
+      "shortDescription": "Short description must be at least 30 characters long",
+      "content": "<p>Main content of the article</p>",
+      "publishedDate": "02-05-2020",
+      "category": "Sport",
+      "author": "test 3"
+    },
+    {
+      "title": "Aplikacja działa ",
+      "author": "Paweł Król ",
+      "publishedDate": "2023-11-16T13:44:10.000Z",
+      "category": "Movies",
+      "shortDescription": "Udało się pozbyć błędu: action must be plain object. ",
+      "content": "<p>Aplikacja działa poprawnie. Działa już prawie wszystko oprocz tekstu brak listy postow z tej kategorii</p>",
+      "id": "Fll_h66"
+    },
+    {
+      "title": "Test aplikacji",
+      "author": "Natalia Kubiak",
+      "publishedDate": "2023-11-25T13:04:51.418Z",
+      "shortDescription": "Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji ",
+      "content": "<p>Test aplikcji, <strong>Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji</strong>, Test aplikcji, Test aplikcji&nbsp;</p>",
+      "category": "Movies",
+      "id": "21jZ4R0"
+    }
+  ],
+  "categories": [
+    "Sport",
+    "News",
+    "Movies"
+  ]
+}
