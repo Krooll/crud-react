@@ -35,6 +35,24 @@
       "content": "<p>Test aplikcji, <strong>Test aplikcji, Test aplikcji, Test aplikcji, Test aplikcji</strong>, Test aplikcji, Test aplikcji&nbsp;</p>",
       "category": "Movies",
       "id": "21jZ4R0"
+    },
+    {
+      "title": "test category ",
+      "author": "test category ",
+      "publishedDate": "2024-01-07T21:36:03.529Z",
+      "shortDescription": "let see that a i can choose post's category",
+      "content": "<p>let see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's category</p>",
+      "category": "News",
+      "id": "FRL1uXx"
+    },
+    {
+      "title": "post's category",
+      "author": "post's category",
+      "publishedDate": "2024-01-07T21:37:17.244Z",
+      "shortDescription": "let see that a i can choose post's category",
+      "content": "<p>let see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's categorylet see that a i can choose post's category</p>",
+      "category": "Sport",
+      "id": "TmNI_Wa"
     }
   ],
   "categories": [
